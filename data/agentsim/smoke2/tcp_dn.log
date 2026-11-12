@@ -1,0 +1,9 @@
+[DIAG-BG] proto=tcp bg=video upMbps=0.5 dnMbps=20 BuMeas=29.5 t0=3.5
+[ASSOC-FIX] t=0.5 repaired=1
+[DIAG-HOST] hubTaskRx=0 cloudTaskRx=150
+[DIAG-Q] wanTx: pkts=0 bytes=0 dequeued=37409 qDelayMeanMs=0.904461 qDelayMaxMs=14 | big: n=0 mean=0 | small: n=37409 mean=0.904461
+[DIAG-QHIST] 0B:37409
+[DIAG-BG] bg=video upSentB=0 upRcvB=0 dnSentB=0 dnRcvB=0
+[DIAG-L2] apMacRx=16 hubEthMacRx=5472 dirPktRx=16 hubIp4Drop=
+[DIAG-RF] txBusyS=20.8243 retxTotal=2 rspTx=800 rspPhyTx=802 staPhy=6956 staData=5648 staMac=5472 staOther(ACK/BAR等)=1308
+[DIAG] query=50 rsp=800 blkNak=5 blkResend=5 taskSent=150 taskRecv=150 doneSent=150 latencyN=150

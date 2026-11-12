@@ -1,0 +1,9 @@
+[DIAG-BG] proto=tcp bg=backup upMbps=24 dnMbps=0 BuMeas=6 t0=3.5
+[ASSOC-FIX] t=0.5 repaired=1
+[DIAG-HOST] hubTaskRx=0 cloudTaskRx=150
+[DIAG-Q] wanTx: pkts=0 bytes=0 dequeued=43072 qDelayMeanMs=6.20972 qDelayMaxMs=56 | big: n=0 mean=0 | small: n=43072 mean=6.20972
+[DIAG-QHIST] 0B:43072
+[DIAG-BG] bg=backup upSentB=0 upRcvB=0 dnSentB=0 dnRcvB=0
+[DIAG-L2] apMacRx=16 hubEthMacRx=5500 dirPktRx=16 hubIp4Drop=
+[DIAG-RF] txBusyS=20.6897 retxTotal=2 rspTx=800 rspPhyTx=802 staPhy=6935 staData=5618 staMac=5500 staOther(ACK/BAR等)=1317
+[DIAG] query=50 rsp=800 blkNak=6 blkResend=6 taskSent=150 taskRecv=150 doneSent=150 latencyN=150

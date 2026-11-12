@@ -1,0 +1,2 @@
+seed,N,m,g,rttMs,bwUpMbps,ctxKB,psi,discovery,policy,p50,p95,wanUpBytes,wanDnBytes,payloadBytes,lambda,airtimeS,taskFailed,rounds,missingResp,discP50,discP95,discP50us,discP95us,txBusyS,retxTotal,rspTxTotal,rspPhyTxTotal,wanUpRealB,wanDnRealB
+1,16,3,16384,30,30,16,0,multicast,ours,0,0,0,0,49152,0,0.07578,0,50,0,3,4,3189,4034,0.233168,557,800,1357,0,0

@@ -1,0 +1,2 @@
+seed,N,m,g,rttMs,bwUpMbps,ctxKB,psi,discovery,policy,p50,p95,wanUpBytes,wanDnBytes,payloadBytes,lambda,airtimeS,taskFailed,rounds,missingResp,discP50,discP95,discP50us,discP95us,txBusyS,retxTotal,rspTxTotal,rspPhyTxTotal,wanUpRealB,wanDnRealB,taskSent,taskDone
+1,16,3,16384,30,30,16,0,directory,oracle,44,79,1664000,409600,49152,42.1875,0,0,0,0,0,0,0,0,11.1461,0,0,0,1730216,422401,150,150

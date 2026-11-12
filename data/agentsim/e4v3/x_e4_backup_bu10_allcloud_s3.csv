@@ -1,0 +1,2 @@
+seed,N,m,g,rttMs,bwUpMbps,ctxKB,psi,discovery,policy,p50,p95,wanUpBytes,wanDnBytes,payloadBytes,lambda,airtimeS,taskFailed,rounds,missingResp,discP50,discP95,discP50us,discP95us,txBusyS,retxTotal,rspTxTotal,rspPhyTxTotal,wanUpRealB,wanDnRealB,taskSent,taskDone
+3,16,3,16384,30,10,16,0,directory,allcloud,93,285,3793920,933888,49152,96.1875,0,29,0,0,0,0,0,0,83.9726,0,0,0,32744447,962049,114,111

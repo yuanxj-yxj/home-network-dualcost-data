@@ -1,0 +1,9 @@
+[DIAG-BG] proto=udp bg=backup upMbps=24 dnMbps=0 BuMeas=6 t0=3.5
+[ASSOC-FIX] t=0.5 repaired=1
+[DIAG-HOST] hubTaskRx=150 cloudTaskRx=0
+[DIAG-Q] wanTx: pkts=0 bytes=0 dequeued=70719 qDelayMeanMs=0 qDelayMaxMs=0 | big: n=0 mean=0 | small: n=70719 mean=0
+[DIAG-QHIST] 0B:70719
+[DIAG-BG] bg=backup upSentB=99030400 upRcvB=98960400 dnSentB=0 dnRcvB=0
+[DIAG-L2] apMacRx=16 hubEthMacRx=4560 dirPktRx=16 hubIp4Drop=
+[DIAG-RF] txBusyS=24.5374 retxTotal=0 rspTx=0 rspPhyTx=0 staPhy=5384 staData=4792 staMac=4560 staOther(ACK/BAR等)=592
+[DIAG] query=0 rsp=0 blkNak=1 blkResend=1 taskSent=150 taskRecv=150 doneSent=150 latencyN=150

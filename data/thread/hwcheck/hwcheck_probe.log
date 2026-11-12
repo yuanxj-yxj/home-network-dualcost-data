@@ -1,0 +1,100 @@
+=== [1] insmod 802.15.4/6LoWPAN 模块 ===
+insmod ieee802154 OK
+insmod ieee802154_socket OK
+insmod mac802154 OK
+mac802154_hwsim        24576  0
+ieee802154_6lowpan     28672  0
+6lowpan                40960  8 nhc_fragment,nhc_dest,nhc_ipv6,nhc_hop,nhc_udp,nhc_mobility,nhc_routing,ieee802154_6lowpan
+mac802154             147456  1 mac802154_hwsim
+ieee802154_socket      28672  0
+ieee802154            155648  3 ieee802154_socket,mac802154,ieee802154_6lowpan
+=== [2] 两个 netns + hwsim 电台 + lowpan 接口 ===
+phys: phy3 phy2
+leaf:wpan1  border:wpan0
+lowpan0 MTU = 1280
+=== [3] 连通性检查 (ping6, 3 次) ===
+3 packets transmitted, 3 received, 0% packet loss, time 2024ms
+rtt min/avg/max/mdev = 0.067/0.093/0.121/0.022 ms
+=== [4] border 启 UDP echo server ===
+=== [5] 发送矩阵 ===
+{'g': 20480, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.66}
+{'g': 20480, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.07}
+{'g': 20480, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.34}
+{'g': 20480, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.34}
+{'g': 20480, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.84}
+{'g': 20480, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.27}
+{'g': 24576, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.57}
+{'g': 24576, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.39}
+{'g': 24576, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.57}
+{'g': 24576, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.04}
+{'g': 24576, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.43}
+{'g': 24576, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.91}
+{'g': 32768, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.1}
+{'g': 32768, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.45}
+{'g': 32768, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.92}
+{'g': 32768, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.22}
+{'g': 32768, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.22}
+{'g': 32768, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.26}
+{'g': 40960, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.86}
+{'g': 40960, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.86}
+{'g': 40960, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.98}
+{'g': 40960, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.04}
+{'g': 40960, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.73}
+{'g': 40960, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.21}
+{'g': 49152, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.63}
+{'g': 49152, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.46}
+{'g': 49152, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.66}
+{'g': 49152, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.13}
+{'g': 49152, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.85}
+{'g': 49152, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.69}
+{'g': 57344, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.33}
+{'g': 57344, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.84}
+{'g': 57344, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.21}
+{'g': 57344, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.28}
+{'g': 57344, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.32}
+{'g': 57344, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.07}
+{'g': 65000, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.19}
+{'g': 65000, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.93}
+{'g': 65000, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.61}
+{'g': 65000, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.14}
+{'g': 65000, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 5.16}
+{'g': 65000, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.54}
+{'g': 65507, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.32}
+{'g': 65507, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.42}
+{'g': 65507, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.66}
+{'g': 65507, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.1}
+{'g': 65507, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.06}
+{'g': 65507, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 6.17}
+CSV written: /mnt/d/工作区/ns3_work/runs/thread/hwcheck/hwcheck_matrix.csv
+=== [5b] leaf lowpan0 发送统计（验证 IPv6 源分片：tx 包数 >> 发送次数 即两级分片）===
+2: lowpan0@wpan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/6lowpan de:ad:00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+       2219954    1761      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       2220162    1764      0       0       0       0 
+=== [6] 汇总 ===
+   g(B)   n  send_err delivered  md5ok RTT-med(ms) RTT-p95(ms)  ns-3 T2 对照
+  20480   6    0/6       6/6      6/6           2.3         2.3  [ns-3: -]
+  24576   6    0/6       6/6      6/6           2.5         2.6  [ns-3: -]
+  32768   6    0/6       6/6      6/6           3.2         3.5  [ns-3: reassembly stall]
+  40960   6    0/6       6/6      6/6           3.9         4.0  [ns-3: -]
+  49152   6    0/6       6/6      6/6           4.7         4.8  [ns-3: -]
+  57344   6    0/6       6/6      6/6           5.2         5.3  [ns-3: -]
+  65000   6    0/6       6/6      6/6           5.8         6.1  [ns-3: -]
+  65507   6    0/6       6/6      6/6           6.2         6.4  [ns-3: -]
+
+=== 判定（复测目标：6LoWPAN 单数据报上限 ≤16 KB）===
+    20480 B: 一致（可达）
+    24576 B: 一致（可达）
+    32768 B: 一致（可达）
+    40960 B: 一致（可达）
+    49152 B: 一致（可达）
+    57344 B: 一致（可达）
+    65000 B: 一致（可达）
+    65507 B: 一致（可达）
+
+  g≤16KB 全部可达        : PASS
+  32KB 失败或重组停滞     : FAIL
+  64KB 发送失败           : FAIL
+hwcheck done; CSV: /mnt/d/工作区/ns3_work/runs/thread/hwcheck/hwcheck_matrix.csv

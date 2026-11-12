@@ -1,0 +1,205 @@
+=== [1] insmod 802.15.4/6LoWPAN 模块 ===
+insmod ieee802154 OK
+insmod ieee802154_socket OK
+insmod mac802154 OK
+mac802154_hwsim        24576  0
+ieee802154_6lowpan     28672  0
+6lowpan                40960  8 nhc_fragment,nhc_dest,nhc_ipv6,nhc_hop,nhc_udp,nhc_mobility,nhc_routing,ieee802154_6lowpan
+mac802154             147456  1 mac802154_hwsim
+ieee802154_socket      28672  0
+ieee802154            155648  3 ieee802154_socket,mac802154,ieee802154_6lowpan
+=== [2] 两个 netns + hwsim 电台 + lowpan 接口 ===
+phys: phy3 phy2
+leaf:wpan1  border:wpan0
+lowpan0 MTU = 1280
+=== [3] 连通性检查 (ping6, 3 次) ===
+3 packets transmitted, 3 received, 0% packet loss, time 2053ms
+rtt min/avg/max/mdev = 0.061/0.074/0.081/0.009 ms
+=== [4] border 启 UDP echo server ===
+=== [5] 发送矩阵 ===
+{'g': 512, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.2}
+{'g': 512, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.41}
+{'g': 512, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.37}
+{'g': 512, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.33}
+{'g': 512, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.45}
+{'g': 512, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.35}
+{'g': 512, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.38}
+{'g': 512, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.6}
+{'g': 512, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.52}
+{'g': 512, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.41}
+{'g': 512, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.76}
+{'g': 512, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.47}
+{'g': 512, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.54}
+{'g': 512, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.4}
+{'g': 512, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.53}
+{'g': 512, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.65}
+{'g': 512, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.54}
+{'g': 512, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.58}
+{'g': 512, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.5}
+{'g': 512, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.6}
+{'g': 1024, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.52}
+{'g': 1024, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.61}
+{'g': 1024, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.49}
+{'g': 1024, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.62}
+{'g': 1024, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.57}
+{'g': 1024, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.53}
+{'g': 1024, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.54}
+{'g': 1024, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.56}
+{'g': 1024, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.5}
+{'g': 1024, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.69}
+{'g': 1024, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.42}
+{'g': 1024, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.61}
+{'g': 1024, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.58}
+{'g': 1024, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.67}
+{'g': 1024, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.69}
+{'g': 1024, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.47}
+{'g': 1024, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.57}
+{'g': 1024, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.7}
+{'g': 1024, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.4}
+{'g': 1024, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.39}
+{'g': 2048, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.0}
+{'g': 2048, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.62}
+{'g': 2048, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.77}
+{'g': 2048, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.65}
+{'g': 2048, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.64}
+{'g': 2048, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.5}
+{'g': 2048, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.68}
+{'g': 2048, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.64}
+{'g': 2048, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.71}
+{'g': 2048, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.67}
+{'g': 2048, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.08}
+{'g': 2048, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.56}
+{'g': 2048, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.74}
+{'g': 2048, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.68}
+{'g': 2048, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.7}
+{'g': 2048, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.54}
+{'g': 2048, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.72}
+{'g': 2048, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.72}
+{'g': 2048, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.65}
+{'g': 2048, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.7}
+{'g': 4096, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.83}
+{'g': 4096, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.8}
+{'g': 4096, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.1}
+{'g': 4096, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.76}
+{'g': 4096, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.84}
+{'g': 4096, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.98}
+{'g': 4096, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.08}
+{'g': 4096, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.78}
+{'g': 4096, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.17}
+{'g': 4096, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.74}
+{'g': 4096, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.77}
+{'g': 4096, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.75}
+{'g': 4096, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.84}
+{'g': 4096, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.29}
+{'g': 4096, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.83}
+{'g': 4096, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.82}
+{'g': 4096, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.8}
+{'g': 4096, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.9}
+{'g': 4096, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.89}
+{'g': 4096, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.87}
+{'g': 8192, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.05}
+{'g': 8192, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.2}
+{'g': 8192, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.12}
+{'g': 8192, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.35}
+{'g': 8192, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.27}
+{'g': 8192, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.08}
+{'g': 8192, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.96}
+{'g': 8192, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.97}
+{'g': 8192, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.22}
+{'g': 8192, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.36}
+{'g': 8192, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.1}
+{'g': 8192, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.21}
+{'g': 8192, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.18}
+{'g': 8192, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 0.88}
+{'g': 8192, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.07}
+{'g': 8192, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.25}
+{'g': 8192, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.08}
+{'g': 8192, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.12}
+{'g': 8192, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.97}
+{'g': 8192, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.12}
+{'g': 16384, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.86}
+{'g': 16384, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.84}
+{'g': 16384, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.72}
+{'g': 16384, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.14}
+{'g': 16384, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.83}
+{'g': 16384, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.51}
+{'g': 16384, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.83}
+{'g': 16384, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.01}
+{'g': 16384, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.26}
+{'g': 16384, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.8}
+{'g': 16384, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.1}
+{'g': 16384, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.29}
+{'g': 16384, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.21}
+{'g': 16384, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.2}
+{'g': 16384, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.24}
+{'g': 16384, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.13}
+{'g': 16384, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.84}
+{'g': 16384, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.84}
+{'g': 16384, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 1.87}
+{'g': 16384, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.12}
+{'g': 32768, 'i': 0, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.88}
+{'g': 32768, 'i': 1, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.35}
+{'g': 32768, 'i': 2, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.25}
+{'g': 32768, 'i': 3, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.15}
+{'g': 32768, 'i': 4, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.61}
+{'g': 32768, 'i': 5, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.94}
+{'g': 32768, 'i': 6, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 4.1}
+{'g': 32768, 'i': 7, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.16}
+{'g': 32768, 'i': 8, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.86}
+{'g': 32768, 'i': 9, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.98}
+{'g': 32768, 'i': 10, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.72}
+{'g': 32768, 'i': 11, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.24}
+{'g': 32768, 'i': 12, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.07}
+{'g': 32768, 'i': 13, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.85}
+{'g': 32768, 'i': 14, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.52}
+{'g': 32768, 'i': 15, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.97}
+{'g': 32768, 'i': 16, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.3}
+{'g': 32768, 'i': 17, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.2}
+{'g': 32768, 'i': 18, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 2.23}
+{'g': 32768, 'i': 19, 'send_ok': 1, 'errno': '', 'delivered': 1, 'md5_ok': 1, 'rtt_ms': 3.57}
+{'g': 65536, 'i': 0, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 1, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 2, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 3, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 4, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 5, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 6, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 7, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 8, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 9, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 10, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 11, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 12, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 13, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 14, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 15, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 16, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 17, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 18, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+{'g': 65536, 'i': 19, 'send_ok': 0, 'errno': '90/OSError', 'delivered': 0, 'md5_ok': 0, 'rtt_ms': ''}
+CSV written: /mnt/d/工作区/ns3_work/runs/thread/hwcheck/hwcheck_matrix.csv
+=== [6] 汇总 ===
+   g(B)   n  send_err delivered  md5ok RTT-med(ms) RTT-p95(ms)  ns-3 T2 对照
+    512  20    0/20     20/20    20/20          0.5         0.7  [ns-3: OK]
+   1024  20    0/20     20/20    20/20          0.6         0.7  [ns-3: OK]
+   2048  20    0/20     20/20    20/20          0.7         1.0  [ns-3: OK]
+   4096  20    0/20     20/20    20/20          0.8         1.2  [ns-3: OK]
+   8192  20    0/20     20/20    20/20          1.1         1.4  [ns-3: OK]
+  16384  20    0/20     20/20    20/20          2.1         2.3  [ns-3: OK (2508 ms)]
+  32768  20    0/20     20/20    20/20          3.2         3.9  [ns-3: reassembly stall]
+  65536  20   20/20      0/20     0/20            -           -  [ns-3: send fail r=-1]
+
+=== 判定（复测目标：6LoWPAN 单数据报上限 ≤16 KB）===
+      512 B: 一致（可达）
+     1024 B: 一致（可达）
+     2048 B: 一致（可达）
+     4096 B: 一致（可达）
+     8192 B: 一致（可达）
+    16384 B: 一致（可达）
+    32768 B: 一致（可达）
+    65536 B: 一致（发送层拒绝）
+
+  g≤16KB 全部可达        : PASS
+  32KB 失败或重组停滞     : FAIL
+  64KB 发送失败           : PASS
+hwcheck done; CSV: /mnt/d/工作区/ns3_work/runs/thread/hwcheck/hwcheck_matrix.csv

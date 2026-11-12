@@ -1,0 +1,7 @@
+[ASSOC-FIX] t=0.5 repaired=1
+[DIAG-HOST] hubTaskRx=0 cloudTaskRx=150
+[DIAG-Q] wanTx: pkts=0 bytes=0 dequeued=6505 qDelayMeanMs=8.71299 qDelayMaxMs=20 | big: n=0 mean=0 | small: n=6505 mean=8.71299
+[DIAG-QHIST] 0B:6505
+[DIAG-L2] apMacRx=16 hubEthMacRx=6687 dirPktRx=16 hubIp4Drop=
+[DIAG-RF] txBusyS=33.6536 retxTotal=0 rspTx=0 rspPhyTx=0 staPhy=9357 staData=7207 staMac=6687 staOther(ACK/BAR等)=2150
+[DIAG] query=0 rsp=0 blkNak=5 blkResend=5 taskSent=150 taskRecv=150 doneSent=150 latencyN=150
